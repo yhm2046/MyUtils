@@ -3,9 +3,13 @@ package com.aidl.myutils;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.aidl.myutils.files.FileUtils;
+import com.aidl.myutils.json.JsonTest;
 import com.aidl.myutils.list.ListUtils;
+
+import org.json.JSONException;
 
 import java.io.IOException;
 
@@ -16,7 +20,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        testJson();
-        ListUtils.main1(null);
+//        ListUtils.main1(null);
+        try {
+            JsonTest.main(null);
+        } catch (JSONException e) {
+            Log.i("xwg","exception:" + e);
+            throw new RuntimeException(e);
+        }
     }
 
     private void testJson() {
