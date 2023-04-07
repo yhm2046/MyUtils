@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
 //        testJson();
 //        ListUtils.main1(null);
         try {
-            JsonTest.main(null);
-        } catch (JSONException e) {
+//            JsonTest.main(null);
+            JsonTest.copyTest();
+        } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
         }
