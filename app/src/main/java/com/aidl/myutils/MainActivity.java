@@ -9,6 +9,7 @@ import com.aidl.myutils.base.BaseUtils;
 import com.aidl.myutils.files.FileUtils;
 import com.aidl.myutils.json.JsonTest;
 import com.aidl.myutils.list.ListUtils;
+import com.aidl.myutils.thread.MyThread;
 import com.aidl.myutils.thread.SemaphoreDemo;
 import com.aidl.myutils.thread.SynchronizedTest;
 
@@ -33,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
 //            BaseUtils.switchTest(61);
 //            BaseUtils.switchTest2(78);
 //            SemaphoreDemo.main(null);
-            SynchronizedTest.main(null);
+//            SynchronizedTest.main(null);
+            MyThread.main(null);
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
