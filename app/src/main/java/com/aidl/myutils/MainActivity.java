@@ -12,6 +12,7 @@ import com.aidl.myutils.list.ListUtils;
 import com.aidl.myutils.thread.MyThread;
 import com.aidl.myutils.thread.SemaphoreDemo;
 import com.aidl.myutils.thread.SynchronizedTest;
+import com.aidl.myutils.thread.UnsynchBankTest;
 
 import org.json.JSONException;
 
@@ -35,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
 //            BaseUtils.switchTest2(78);
 //            SemaphoreDemo.main(null);
 //            SynchronizedTest.main(null);
-            MyThread.main(null);
+//            MyThread.main(null);
+            UnsynchBankTest.main(null);
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
