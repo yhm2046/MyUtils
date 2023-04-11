@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 //        testJson();
 //        ListUtils.main1(null);
         try {
-//            JsonTest.main(null);
+            JsonTest.main(null);
 //            JsonTest.copyTest();
 //            BaseUtils.switchTest(99);
 //            BaseUtils.switchTest(59);
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 //            SemaphoreDemo.main(null);
 //            SynchronizedTest.main(null);
 //            MyThread.main(null);
-            UnsynchBankTest.main(null);
+//            UnsynchBankTest.main(null);
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
