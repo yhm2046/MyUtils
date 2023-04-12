@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.aidl.myutils.base.BaseUtils;
+import com.aidl.myutils.designpatterns.ProducerConsumerExample;
 import com.aidl.myutils.files.FileUtils;
 import com.aidl.myutils.json.JsonTest;
 import com.aidl.myutils.list.ListUtils;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 //            SynchronizedTest.main(null);
 //            MyThread.main(null);
 //            UnsynchBankTest.main(null);
+            ProducerConsumerExample.main(null);
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
