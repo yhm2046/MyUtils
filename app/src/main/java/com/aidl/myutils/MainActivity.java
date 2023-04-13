@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.aidl.myutils.base.BaseUtils;
 import com.aidl.myutils.designpatterns.ProducerConsumerExample;
+import com.aidl.myutils.encryption.EncryptionAndDecryption;
 import com.aidl.myutils.files.FileUtils;
 import com.aidl.myutils.json.JsonTest;
 import com.aidl.myutils.list.ListUtils;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 //        testJson();
 //        ListUtils.main1(null);
         try {
-            JsonTest.main(null);
+//            JsonTest.main(null);
 //            JsonTest.copyTest();
 //            BaseUtils.switchTest(99);
 //            BaseUtils.switchTest(59);
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
 //            SynchronizedTest.main(null);
 //            MyThread.main(null);
 //            UnsynchBankTest.main(null);
-            ProducerConsumerExample.main(null);
+//            ProducerConsumerExample.main(null);
+            EncryptionAndDecryption.main(null);
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
