@@ -3,6 +3,14 @@ package com.aidl.myutils.thread;
 import android.util.Log;
 
 /**
+ * 使用条件对象后金额正确:<java核心技术卷1>12版p589
+ * 2023-04-15 10:26:02.880  6740-6780  System.out              com.aidl.myutils                     I  Thread[Thread-5,5,main]
+ * 2023-04-15 10:26:02.880  6740-6780  System.out              com.aidl.myutils                     I      142.74 from 3 to 42 Total Balance:  100000.00
+ * 2023-04-15 10:26:02.880  6740-6872  System.out              com.aidl.myutils                     I  Thread[Thread-85,5,main]
+ * 2023-04-15 10:26:02.880  6740-6872  System.out              com.aidl.myutils                     I      750.24 from 83 to 86 Total Balance:  100000.00
+ * 2023-04-15 10:26:02.880  6740-6860  System.out              com.aidl.myutils                     I  Thread[Thread-73,5,main]
+ * 2023-04-15 10:26:02.881  6740-6860  System.out              com.aidl.myutils                     I      197.41 from 71 to 81 Total Balance:  100000.00
+ *
  * 使用重入锁后金额正确:<java核心技术卷1>12版p585
  2023-04-15 10:00:12.601 21677-21834 System.out              com.aidl.myutils                     I  Thread[Thread-101,5,main]
  2023-04-15 10:00:12.601 21677-21834 System.out              com.aidl.myutils                     I      497.42 from 99 to 97 Total Balance:  100000.00
@@ -30,12 +38,13 @@ public class UnsynchBankTest {
     public static final int DELAY = 10;
 
     /**
-     * 多线程转账操作,余额总量不对,求和不为1000 * 10
+     * 多线程转账操作测试
      * @param args  命令行参数
      */
     public static void main(String[] args) {
 //        var bank = new Bank(NACCOUNTS,INITIAL_BALANCE);
-        var bank = new BankReentrantLock(NACCOUNTS,INITIAL_BALANCE);
+//        var bank = new BankReentrantLock(NACCOUNTS,INITIAL_BALANCE);
+        var bank = new BankCondition(NACCOUNTS,INITIAL_BALANCE);
         for (int i = 0; i < NACCOUNTS; i++){
             int fromAccount = i;
             Runnable r = () ->{
