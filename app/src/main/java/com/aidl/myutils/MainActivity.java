@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
 //            SemaphoreDemo.main(null);
 //            SynchronizedTest.main(null);
 //            MyThread.main(null);
-//            UnsynchBankTest.main(null);
+            UnsynchBankTest.main(null); //竞态的同步
 //            ProducerConsumerExample.main(null);
-            EncryptionAndDecryption.main(null);
+//            EncryptionAndDecryption.main(null);
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
