@@ -3,6 +3,14 @@ package com.aidl.myutils.thread;
 import android.util.Log;
 
 /**
+ * 使用synchronization关键字同步:<java核心技术卷1>12版p593
+ * 2023-04-15 11:03:14.988 30888-30941 System.out              com.aidl.myutils                     I  Thread[Thread-19,5,main]
+ * 2023-04-15 11:03:14.988 30888-30941 System.out              com.aidl.myutils                     I      507.25 from 17 to 32 Total Balance:  100000.00
+ * 2023-04-15 11:03:14.988 30888-30963 System.out              com.aidl.myutils                     I  Thread[Thread-41,5,main]
+ * 2023-04-15 11:03:14.988 30888-30963 System.out              com.aidl.myutils                     I      940.36 from 39 to 85 Total Balance:  100000.00
+ * 2023-04-15 11:03:14.989 30888-30937 System.out              com.aidl.myutils                     I  Thread[Thread-16,5,main]
+ * 2023-04-15 11:03:14.989 30888-30937 System.out              com.aidl.myutils                     I      233.36 from 14 to 70 Total Balance:  100000.00
+ *
  * 使用条件对象后金额正确:<java核心技术卷1>12版p589
  * 2023-04-15 10:26:02.880  6740-6780  System.out              com.aidl.myutils                     I  Thread[Thread-5,5,main]
  * 2023-04-15 10:26:02.880  6740-6780  System.out              com.aidl.myutils                     I      142.74 from 3 to 42 Total Balance:  100000.00
@@ -44,7 +52,8 @@ public class UnsynchBankTest {
     public static void main(String[] args) {
 //        var bank = new Bank(NACCOUNTS,INITIAL_BALANCE);
 //        var bank = new BankReentrantLock(NACCOUNTS,INITIAL_BALANCE);
-        var bank = new BankCondition(NACCOUNTS,INITIAL_BALANCE);
+//        var bank = new BankCondition(NACCOUNTS,INITIAL_BALANCE);
+        var bank = new BankSynchronization(NACCOUNTS,INITIAL_BALANCE);
         for (int i = 0; i < NACCOUNTS; i++){
             int fromAccount = i;
             Runnable r = () ->{
