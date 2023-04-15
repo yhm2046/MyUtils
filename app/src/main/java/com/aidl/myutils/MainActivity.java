@@ -15,6 +15,7 @@ import com.aidl.myutils.thread.MyThread;
 import com.aidl.myutils.thread.SemaphoreDemo;
 import com.aidl.myutils.thread.SynchronizedTest;
 import com.aidl.myutils.thread.UnsynchBankTest;
+import com.aidl.myutils.thread.VolatileExample;
 
 import org.json.JSONException;
 
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
 //            SemaphoreDemo.main(null);
 //            SynchronizedTest.main(null);
 //            MyThread.main(null);
-            UnsynchBankTest.main(null); //竞态的同步
+//            UnsynchBankTest.main(null); //竞态的同步
+            VolatileExample.main(null); //volatile关键字例子
 //            ProducerConsumerExample.main(null);
 //            EncryptionAndDecryption.main(null);
         } catch (Exception e) {
