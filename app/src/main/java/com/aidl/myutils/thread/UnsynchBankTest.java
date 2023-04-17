@@ -40,10 +40,10 @@ import android.util.Log;
  * 2023-04-15 09:53:22.415 17410-17512 System.out              com.aidl.myutils                     I      913.87 from 56 to 73 Total Balance:   94186.19
  */
 public class UnsynchBankTest {
-    public static final int NACCOUNTS = 100;
-    public static final double INITIAL_BALANCE = 1000;
-    public static final double MAX_AMOUNT = 1000;
-    public static final int DELAY = 10;
+    public static final int NACCOUNTS = 10; //账户个数
+    public static final double INITIAL_BALANCE = 1000;  //账户初始值
+    public static final double MAX_AMOUNT = 1000;   //最大转账限制金额
+    public static final int DELAY = 10; //休眠时间
 
     /**
      * 多线程转账操作测试
@@ -53,14 +53,14 @@ public class UnsynchBankTest {
 //        var bank = new Bank(NACCOUNTS,INITIAL_BALANCE);
 //        var bank = new BankReentrantLock(NACCOUNTS,INITIAL_BALANCE);
 //        var bank = new BankCondition(NACCOUNTS,INITIAL_BALANCE);
-        var bank = new BankSynchronization(NACCOUNTS,INITIAL_BALANCE);
+        var bank = new BankSynchronization(NACCOUNTS,INITIAL_BALANCE );  //新建账户
         for (int i = 0; i < NACCOUNTS; i++){
             int fromAccount = i;
             Runnable r = () ->{
                 try{
                     while (true){   //随机转账
                         int toAccount = (int)(bank.size() * Math.random());
-                        double amount = MAX_AMOUNT * Math.random();
+                        double amount = 2 * MAX_AMOUNT * Math.random();
                         bank.transfer(fromAccount,toAccount,amount);
                         Thread.sleep((int)(DELAY * Math.random()));
                     }
