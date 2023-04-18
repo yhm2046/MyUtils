@@ -16,6 +16,17 @@ import java.util.concurrent.Semaphore;
  * 另外，Semaphore还有一个可选的构造方法，可以指定它是否公平，即许可证的获取是否按照FIFO原则分配给等待的线程。
  * 如果公平性被启用，Semaphore将维护一个等待队列，按照请求许可证的顺序为等待的线程分配许可证。如果禁用公平性，则Semaphore将随机分配许可证，无法保证请求许可证的顺序。
  *
+ * 运行结果:
+ * 2023-04-18 10:50:22.565 18077-18102 System.out              com.aidl.myutils                     I  Thread 1 is running
+ * 2023-04-18 10:50:22.565 18077-18104 System.out              com.aidl.myutils                     I  Thread 3 is running
+ * 2023-04-18 10:50:22.565 18077-18105 System.out              com.aidl.myutils                     I  Thread 4 is running
+ * 2023-04-18 10:50:23.565 18077-18102 System.out              com.aidl.myutils                     I  Thread 1 has finished
+ * 2023-04-18 10:50:23.565 18077-18104 System.out              com.aidl.myutils                     I  Thread 3 has finished
+ * 2023-04-18 10:50:23.565 18077-18105 System.out              com.aidl.myutils                     I  Thread 4 has finished
+ * 2023-04-18 10:50:23.565 18077-18103 System.out              com.aidl.myutils                     I  Thread 2 is running
+ * 2023-04-18 10:50:23.566 18077-18106 System.out              com.aidl.myutils                     I  Thread 5 is running
+ * 2023-04-18 10:50:24.567 18077-18106 System.out              com.aidl.myutils                     I  Thread 5 has finished
+ * 2023-04-18 10:50:24.567 18077-18103 System.out              com.aidl.myutils                     I  Thread 2 has finished
  */
 public class SemaphoreExample {
     /**
@@ -30,7 +41,7 @@ public class SemaphoreExample {
     public static void main(String[] args) {
         Semaphore sem = new Semaphore(3); // 最多只允许3个线程同时执行
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 5; i++) {
             Thread t = new MyThreadSemaphore(sem, i);
             t.start();
         }
