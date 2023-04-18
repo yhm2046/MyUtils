@@ -13,6 +13,7 @@ import com.aidl.myutils.json.JsonTest;
 import com.aidl.myutils.list.ListUtils;
 import com.aidl.myutils.thread.MyThread;
 import com.aidl.myutils.thread.SemaphoreDemo;
+import com.aidl.myutils.thread.SemaphoreExample;
 import com.aidl.myutils.thread.SynchronizedTest;
 import com.aidl.myutils.thread.UnsynchBankTest;
 import com.aidl.myutils.thread.VolatileExample;
@@ -40,10 +41,11 @@ public class MainActivity extends AppCompatActivity {
 //            SemaphoreDemo.main(null);
 //            SynchronizedTest.main(null);
 //            MyThread.main(null);
-            UnsynchBankTest.main(null); //竞态的同步
+//            UnsynchBankTest.main(null); //竞态的同步
 //            VolatileExample.main(null); //volatile关键字例子
 //            ProducerConsumerExample.main(null);
 //            EncryptionAndDecryption.main(null);
+            SemaphoreExample.main(null  );
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
