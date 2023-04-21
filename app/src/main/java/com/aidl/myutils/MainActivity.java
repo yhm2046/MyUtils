@@ -11,6 +11,7 @@ import com.aidl.myutils.encryption.EncryptionAndDecryption;
 import com.aidl.myutils.files.FileUtils;
 import com.aidl.myutils.json.JsonTest;
 import com.aidl.myutils.list.ListUtils;
+import com.aidl.myutils.thread.MessageQueue;
 import com.aidl.myutils.thread.MyThread;
 import com.aidl.myutils.thread.SemaphoreDemo;
 import com.aidl.myutils.thread.SemaphoreExample;
@@ -45,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
 //            VolatileExample.main(null); //volatile关键字例子
 //            ProducerConsumerExample.main(null);
 //            EncryptionAndDecryption.main(null);
-            SemaphoreExample.main(null  );
+//            SemaphoreExample.main(null  );
+            MessageQueue.main(null);
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);
