@@ -17,7 +17,6 @@ public class NetActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_net);
         activity_net  = ActivityNetBinding.inflate(LayoutInflater.from(this));
         setContentView(activity_net.getRoot());
         activity_net.webviewMain.getSettings().setJavaScriptEnabled(true);
