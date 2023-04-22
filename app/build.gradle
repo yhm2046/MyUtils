@@ -18,6 +18,9 @@ android {
     buildFeatures { //viewBinding依赖
         viewBinding true
     }
+    dataBinding {
+        enabled = true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -31,6 +34,13 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: 'src/main/res', include: ['*.crt'])
+    // define a BOM and its version
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.10.0"))
+
+    // define any required OkHttp artifacts without version
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5' //Jackson依赖
     implementation 'com.google.code.gson:gson:2.8.9'    //gson依赖
     implementation 'androidx.appcompat:appcompat:1.6.1'
