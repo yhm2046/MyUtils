@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.aidl.myutils.encryption.RandomNumberAndLetter;
 import com.aidl.myutils.files.FileUtils;
 import com.aidl.myutils.thread.MessageQueue;
 import com.aidl.myutils.thread.MessageQueueFIFO;
@@ -36,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
 //            EncryptionAndDecryption.main(null);
 //            SemaphoreExample.main(null  );
 //            MessageQueueFIFO.main(null);
-            MessageQueue.main(null);
+//            MessageQueue.main(null);
+            RandomNumberAndLetter.main(null);
         } catch (Exception e) {
             Log.i("xwg","exception:" + e);
             throw new RuntimeException(e);

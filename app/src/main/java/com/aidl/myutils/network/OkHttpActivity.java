@@ -5,10 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 
-<<<<<<< HEAD
-=======
-import androidx.annotation.NonNull;
->>>>>>> 49a6bd89ea3e038a7d70948c694b088cab2fee72
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.aidl.myutils.R;
@@ -21,11 +18,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-<<<<<<< HEAD
-=======
-import okhttp3.Call;
-import okhttp3.Callback;
->>>>>>> 49a6bd89ea3e038a7d70948c694b088cab2fee72
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
