@@ -2,10 +2,14 @@ package com.aidl.myutils;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.VolumeShaper;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.aidl.myutils.date.DateCalculator;
+import com.aidl.myutils.designpatterns.simple.factory.Operation;
+import com.aidl.myutils.designpatterns.simple.factory.OperationFactory;
+import com.aidl.myutils.encryption.EncryptionAndDecryption;
 import com.aidl.myutils.encryption.RandomNumberAndLetter;
 import com.aidl.myutils.files.FileUtils;
 import com.aidl.myutils.thread.MessageQueue;
@@ -14,15 +18,20 @@ import com.aidl.myutils.thread.MessageQueueFIFO;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final String TAG = "MainActivity:xwg";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
-            DateCalculator.main(null);
+//            DateCalculator.main(null);
+//            EncryptionAndDecryption.main(null);
+            Operation op = OperationFactory.createOperation("^");
+            double result = op.getResult(2.0, 0);
+            Log.i(TAG,"result :" + result);
+
         } catch (Exception e) {
-            Log.i("xwg","exception:" + e);
+            Log.i(TAG,"exception:" + e);
             throw new RuntimeException(e);
         }
     }

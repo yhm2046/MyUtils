@@ -74,8 +74,8 @@ public class EncryptionAndDecryption {
     }
 
     public static void main(String[] args) {
-//        Log.i("xwg","code is " + getBase64("eWFubXVtdW11bXU="));
-        Log.i("xwg","yanmumumumu with md5 is:" + getMD5("yanmumumumu"));
-        Log.i("xwg","yanmumumumu with sha256 is:" + getSHA256("yanmumumumu"));
+        Log.i("xwg","code is " + getBase64("eWFubXVtdW11bXU="));
+//        Log.i("xwg","yanmumumumu with md5 is:" + getMD5("yanmumumumu"));
+//        Log.i("xwg","yanmumumumu with sha256 is:" + getSHA256("yanmumumumu"));
     }
 }
