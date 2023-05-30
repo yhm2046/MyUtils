@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
         try {
 //            DateCalculator.main(null);
 //            EncryptionAndDecryption.main(null);
-            Operation op = OperationFactory.createOperation("^");
-            double result = op.getResult(2.0, 0);
+//            Operation op = OperationFactory.createOperation("^");
+//            double result = op.getResult(2.0, 0);
+            Operation op = com.aidl.myutils.designpatterns.factory.method.OperationFactory.createOperation("pow");
+            double result = op.getResult(2.0, 10);
             Log.i(TAG,"result :" + result);
 
         } catch (Exception e) {
