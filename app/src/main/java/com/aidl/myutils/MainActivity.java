@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.aidl.myutils.colections.LinkedListTest;
+import com.aidl.myutils.colections.TreeSetTest;
 import com.aidl.myutils.date.DateCalculator;
 import com.aidl.myutils.designpatterns.simple.factory.Operation;
 import com.aidl.myutils.designpatterns.simple.factory.OperationFactory;
@@ -26,11 +27,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
-//            Operation op = com.aidl.myutils.designpatterns.factory.method.OperationFactory.createOperation("pow");
-//            double result = op.getResult(2.0, 10);
-//            Log.i(TAG,"result :" + result);
-//            FutureExample.main(null);
-            LinkedListTest.main(null);
+//            LinkedListTest.main(null);
+            TreeSetTest.main(null);
         } catch (Exception e) {
             Log.i(TAG,"exception:" + e);
             throw new RuntimeException(e);
