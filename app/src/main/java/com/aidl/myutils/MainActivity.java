@@ -12,6 +12,7 @@ import com.aidl.myutils.designpatterns.simple.factory.OperationFactory;
 import com.aidl.myutils.encryption.EncryptionAndDecryption;
 import com.aidl.myutils.encryption.RandomNumberAndLetter;
 import com.aidl.myutils.files.FileUtils;
+import com.aidl.myutils.thread.FutureExample;
 import com.aidl.myutils.thread.MessageQueue;
 import com.aidl.myutils.thread.MessageQueueFIFO;
 
@@ -24,14 +25,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         try {
-//            DateCalculator.main(null);
-//            EncryptionAndDecryption.main(null);
-//            Operation op = OperationFactory.createOperation("^");
-//            double result = op.getResult(2.0, 0);
-            Operation op = com.aidl.myutils.designpatterns.factory.method.OperationFactory.createOperation("pow");
-            double result = op.getResult(2.0, 10);
-            Log.i(TAG,"result :" + result);
-
+//            Operation op = com.aidl.myutils.designpatterns.factory.method.OperationFactory.createOperation("pow");
+//            double result = op.getResult(2.0, 10);
+//            Log.i(TAG,"result :" + result);
+            FutureExample.main(null);
         } catch (Exception e) {
             Log.i(TAG,"exception:" + e);
             throw new RuntimeException(e);
